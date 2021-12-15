@@ -4,6 +4,8 @@ export function renderWitches(witches) {
     const witchPowerLevel = document.createElement('p');
     const witchPowerType = document.createElement('p');
     const witchUses = document.createElement('p');
-    
 
+    witchDiv.append(witchType, witchPowerLevel, witchPowerType, witchUses);
+
+    return witchDiv;
 }
