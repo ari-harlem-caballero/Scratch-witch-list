@@ -5,10 +5,10 @@ import { renderWitches } from './render-utils.js';
 const witchContainer = document.querySelector('#witch-container');
 
 window.addEventListener('load', async() => {
-    const witchie = await getWitches();
+    const witches = await getWitches();
 
-    for (let witches of witchie) {
-        const witchEl = renderWitches(witches);
+    for (let witch of witches) {
+        const witchEl = renderWitches(witch);
 
         witchContainer.append(witchEl);
     }
