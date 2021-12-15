@@ -13,5 +13,3 @@ window.addEventListener('load', async() => {
         witchContainer.append(witchEl);
     }
 });
-
-getWitches();
