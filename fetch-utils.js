@@ -12,3 +12,13 @@ export async function getWitches() {
 
     return response.data;
 }
+
+export async function getWitchType(id) {
+    const response = await client
+        .from('details')
+        .select()
+        .match({ id: id })
+        .single();
+
+    return response.data;
+}
