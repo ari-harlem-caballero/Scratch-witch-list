@@ -13,7 +13,7 @@ export function renderWitches(witch) {
     witchPowerType.textContent = `Power type: ${witch.power_type}`;
 
     witchImg.src = `./assets/witch-${witch.type}-trans.png`;
-    a.href = `./detail/?id=${witch.id}`;
+    a.href = `./details/?id=${witch.id}`;
 
     witchDiv.append(witchType, witchPowerLevel, witchPowerType, witchImg);
 
@@ -45,9 +45,9 @@ export function renderTypeDetail(details) {
     typeUses.classList.add('uses');
     typeUses.textContent = details.uses;
 
-    typeImg.src = `../assets/witch-${details.name}-trans`;
+    typeImg.src = `../assets/witch-${details.name}-trans.png`;
 
-    typeDiv.append(typeName, typePowerLevel, typePower, typeUses, typeImg);
+    typeDiv.append(typeImg, typeName, typePowerLevel, typePower, typeUses);
 
     return typeDiv;
 }
