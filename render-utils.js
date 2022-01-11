@@ -34,12 +34,23 @@ export function renderTypeDetail(witch) {
     typeName.textContent = witch.type;
 
     typeInfo.classList.add('power-type');
-    typeInfo.textContent = `Power type: ${witch.power} Power level: ${witch.power_level}`;
+    typeInfo.textContent = `Power type: ${witch.power_type} Power level: ${witch.power_level}`;
 
     typeUses.classList.add('uses');
     typeUses.textContent = witch.uses;
 
     typeImg.src = `../assets/witch-${witch.type}-trans.png`;
+
+    if (witch.id === 4) {
+        const dropdown = document.createElement('select');
+        const catOption = document.createElement('option');
+        const batOption = document.createElement('option');
+
+        catOption.value = 'cat';
+        catOption.textContent = 'cat';
+
+        dropdown.append(catOption, batOption);
+    }
 
     typeInfo.append(typePowerType, typePowerLevel);
 
