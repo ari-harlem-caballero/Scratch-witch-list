@@ -40,16 +40,27 @@ export function renderTypeDetail(witch) {
     typeUses.textContent = witch.uses;
 
     typeImg.src = `../assets/witch-${witch.type}-trans.png`;
-
+    
     if (witch.id === 4) {
         const dropdown = document.createElement('select');
         const catOption = document.createElement('option');
         const batOption = document.createElement('option');
-
+        
         catOption.value = 'cat';
         catOption.textContent = 'cat';
 
+        batOption.value = 'bat';
+        batOption.textContent = 'bat';
+        
         dropdown.append(catOption, batOption);
+        
+        dropdown.addEventListener('change', () => {
+
+            typeImg.src = `../assets/witch-${dropdown.value}-trans.png`;
+
+        });
+
+        typeDiv.append(dropdown);
     }
 
     typeInfo.append(typePowerType, typePowerLevel);
