@@ -37,7 +37,7 @@ export function renderTypeDetail(witch) {
     typePowerType.classList.add('power-type');
     typePowerType.textContent = `Power type: ${witch.power_type}`; 
 
-    typePowerLevel.classList.add('power-level')
+    typePowerLevel.classList.add('power-level');
     typePowerLevel.textContent = `Power level: ${witch.power_level}`;
 
     typeUses.classList.add('uses');
