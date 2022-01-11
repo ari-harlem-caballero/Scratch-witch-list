@@ -1,16 +1,53 @@
 export function renderWitches(witch) {
     const witchDiv = document.createElement('div');
+    const a = document.createElement('a');
     const witchType = document.createElement('p');
     const witchPowerLevel = document.createElement('p');
     const witchPowerType = document.createElement('p');
-    const witchUses = document.createElement('p');
+    const witchImg = document.createElement('img');
+
+    witchDiv.classList.add('witch-hold');
 
     witchType.textContent = witch.type;
-    witchPowerLevel.textContent = witch.power_level;
-    witchPowerType.textContent = witch.power_type;
-    witchUses.textContent = witch.uses;
+    witchPowerLevel.textContent = `Power level: ${witch.power_level}`;
+    witchPowerType.textContent = `Power type: ${witch.power_type}`;
 
-    witchDiv.append(witchType, witchPowerLevel, witchPowerType, witchUses);
+    witchImg.src = `./assets/witch-${witch.type}-trans.png`;
+    a.href = `./details/?id=${witch.id}`;
 
-    return witchDiv;
+    witchDiv.append(witchType, witchPowerLevel, witchPowerType, witchImg);
+
+    a.append(witchDiv);
+
+    return a;
+}
+
+
+export function renderTypeDetail(details) {
+    const typeDiv = document.createElement('div');
+    const typeName = document.createElement('p');
+    const typePowerLevel = document.createElement('p');
+    const typePower = document.createElement('p');
+    const typeUses = document.createElement('p');
+    const typeImg = document.createElement('img');
+
+    typeDiv.classList.add('type-hold');
+
+    typeName.classList.add('name');
+    typeName.textContent = details.name;
+
+    typePowerLevel.classList.add('power-level');
+    typePowerLevel.textContent = `Power level: ${details.power_level}`;
+
+    typePower.classList.add('power');
+    typePower.textContent = `Power type: ${details.power}`;
+
+    typeUses.classList.add('uses');
+    typeUses.textContent = details.uses;
+
+    typeImg.src = `../assets/witch-${details.name}-trans.png`;
+
+    typeDiv.append(typeImg, typeName, typePowerLevel, typePower, typeUses);
+
+    return typeDiv;
 }

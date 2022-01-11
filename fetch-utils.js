@@ -8,7 +8,17 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 export async function getWitches() {
     const response = await client
         .from('witch')
-        .select;
+        .select();
+
+    return response.data;
+}
+
+export async function getWitchType(id) {
+    const response = await client
+        .from('details')
+        .select()
+        .match({ id: id })
+        .single();
 
     return response.data;
 }
