@@ -7,9 +7,9 @@ window.addEventListener('load', async() => {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
 
-    const details = await getWitchType(id);
+    const witch = await getWitchType(id);
 
-    const witchTypeEl = renderTypeDetail(details);
+    const witchTypeEl = renderTypeDetail(witch);
 
     typeDetailContainer.append(witchTypeEl);
 });

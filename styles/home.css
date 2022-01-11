@@ -1,1 +1,56 @@
-/* add home page styles here */
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #c4e2e9;
+}
+
+img {
+    width: 400px;
+}
+
+.type-hold {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 1000px;
+}
+
+.type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: 35px;
+}
+
+.dropdown {
+    margin: 15px 0;
+}
+
+.power-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    font-size: 20px;
+}
+
+.power-info p {
+    margin: 10px 0 5px 0;
+}
+
+.uses {
+    width: 60%;
+}
