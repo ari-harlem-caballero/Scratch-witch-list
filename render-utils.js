@@ -19,31 +19,31 @@ export function renderWitches(witch) {
 }
 
 
-export function renderTypeDetail(details) {
+export function renderTypeDetail(witch) {
     const typeDiv = document.createElement('div');
+    const typeInfo = document.createElement('div');
     const typeName = document.createElement('p');
     const typePowerLevel = document.createElement('p');
-    const typePower = document.createElement('p');
+    const typePowerType = document.createElement('p');
     const typeUses = document.createElement('p');
     const typeImg = document.createElement('img');
 
     typeDiv.classList.add('type-hold');
 
-    typeName.classList.add('name');
-    typeName.textContent = details.name;
+    typeName.classList.add('type');
+    typeName.textContent = witch.type;
 
-    typePowerLevel.classList.add('power-level');
-    typePowerLevel.textContent = `Power level: ${details.power_level}`;
-
-    typePower.classList.add('power');
-    typePower.textContent = `Power type: ${details.power}`;
+    typeInfo.classList.add('power-type');
+    typeInfo.textContent = `Power type: ${witch.power} Power level: ${witch.power_level}`;
 
     typeUses.classList.add('uses');
-    typeUses.textContent = details.uses;
+    typeUses.textContent = witch.uses;
 
-    typeImg.src = `../assets/witch-${details.name}-trans.png`;
+    typeImg.src = `../assets/witch-${witch.type}-trans.png`;
 
-    typeDiv.append(typeImg, typeName, typePowerLevel, typePower, typeUses);
+    typeInfo.append(typePowerType, typePowerLevel);
+
+    typeDiv.append(typeImg, typeName, typeInfo, typeUses);
 
     return typeDiv;
 }

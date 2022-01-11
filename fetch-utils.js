@@ -15,7 +15,7 @@ export async function getWitches() {
 
 export async function getWitchType(id) {
     const response = await client
-        .from('details')
+        .from('witch')
         .select()
         .match({ id: id })
         .single();
