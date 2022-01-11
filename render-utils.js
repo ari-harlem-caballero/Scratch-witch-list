@@ -11,11 +11,11 @@ export function renderWitches(witch) {
     witchImg.src = `./assets/witch-${witch.type}-trans.png`;
     a.href = `./details/?id=${witch.id}`;
 
-    witchDiv.append(witchImg, witchType);
+    a.append(witchImg);
+    
+    witchDiv.append(a, witchType);
 
-    a.append(witchDiv);
-
-    return a;
+    return witchDiv;
 }
 
 
