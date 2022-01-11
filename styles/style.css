@@ -16,6 +16,10 @@ h2 {
     font-size: 80px;
 }
 
+h3 {
+    font-size: 25px;
+}
+
 img {
     width: 200px;
 }
@@ -25,10 +29,11 @@ img {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .witch-hold {
-    margin: 0 10px;
-    background-color: aquamarine;
+    margin: 15px;
+    /* background-color: aquamarine; */
     text-align: center;
 }

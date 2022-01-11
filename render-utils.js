@@ -1,7 +1,7 @@
 export function renderWitches(witch) {
     const witchDiv = document.createElement('div');
     const a = document.createElement('a');
-    const witchType = document.createElement('p');
+    const witchType = document.createElement('h3');
     const witchImg = document.createElement('img');
 
     witchDiv.classList.add('witch-hold');
@@ -22,19 +22,23 @@ export function renderWitches(witch) {
 export function renderTypeDetail(witch) {
     const typeDiv = document.createElement('div');
     const typeInfo = document.createElement('div');
-    const typeName = document.createElement('p');
+    const typeName = document.createElement('h1');
     const typePowerLevel = document.createElement('p');
     const typePowerType = document.createElement('p');
     const typeUses = document.createElement('p');
     const typeImg = document.createElement('img');
 
     typeDiv.classList.add('type-hold');
+    typeInfo.classList.add('power-info');
 
     typeName.classList.add('type');
     typeName.textContent = witch.type;
+    
+    typePowerType.classList.add('power-type');
+    typePowerType.textContent = `Power type: ${witch.power_type}`; 
 
-    typeInfo.classList.add('power-type');
-    typeInfo.textContent = `Power type: ${witch.power_type} Power level: ${witch.power_level}`;
+    typePowerLevel.classList.add('power-level')
+    typePowerLevel.textContent = `Power level: ${witch.power_level}`;
 
     typeUses.classList.add('uses');
     typeUses.textContent = witch.uses;
@@ -45,22 +49,32 @@ export function renderTypeDetail(witch) {
         const dropdown = document.createElement('select');
         const catOption = document.createElement('option');
         const batOption = document.createElement('option');
+        const ratOption = document.createElement('option');
+        const frogOption = document.createElement('option');
+
+        dropdown.classList.add('dropdown');
         
         catOption.value = 'cat';
         catOption.textContent = 'cat';
 
         batOption.value = 'bat';
         batOption.textContent = 'bat';
+
+        ratOption.value = 'rat';
+        ratOption.textContent = 'rat';
         
-        dropdown.append(catOption, batOption);
+        frogOption.value = 'frog';
+        frogOption.textContent = 'frog';
+        
+        dropdown.append(catOption, batOption, ratOption, frogOption);
         
         dropdown.addEventListener('change', () => {
-
+            
             typeImg.src = `../assets/witch-${dropdown.value}-trans.png`;
-
+            
         });
 
-        typeDiv.append(dropdown);
+        typeName.append(dropdown);
     }
 
     typeInfo.append(typePowerType, typePowerLevel);
